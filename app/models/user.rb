@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :tests
-  has_many :test_progresses
+  has_many :tests, through: :test_progresses
 
   def display_tests_by_level(level)
     Test.joins(:test_progresses)
