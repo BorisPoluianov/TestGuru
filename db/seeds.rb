@@ -17,9 +17,9 @@ categories = Category.create([
   ])
 
 tests = Test.create([
-  { title: 'Capitals of Europe', level: 1, category_id: categories[0].id },
-  { title: 'Capitals of Asia', level: 2, category_id: categories[0].id },
-  { title: 'Currencies of Europe', level: 2, category_id: categories[1].id }
+  { title: 'Capitals of Europe', level: 1, category_id: categories[0].id, author_id: users[0].id },
+  { title: 'Capitals of Asia', level: 2, category_id: categories[0].id, author_id: users[0].id },
+  { title: 'Currencies of Europe', level: 2, category_id: categories[1].id, author_id: users[0].id }
   ])
 
 questions = Question.create([
