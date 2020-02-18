@@ -1,4 +1,13 @@
 class Test < ApplicationRecord
+  validates :title, presence: true
+  validates :title, uniqueness: {
+    scope: :level, message: "title and level should be unique"
+  }
+  validates :level, numericality: {
+    only_integer: true, greater_or_equal_to: 0
+  }
+
+
   belongs_to :category
   belongs_to :author, class_name: 'User'
   has_many :questions

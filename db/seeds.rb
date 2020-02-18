@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create([
-  { login: 'user1', password: 'password1' },
-  { login: 'user2', password: 'password2' }
+  { email: 'user1', password: 'password1' },
+  { email: 'user2', password: 'password2' }
   ])
 
 categories = Category.create([
@@ -60,7 +60,7 @@ Answer.create([
   { body: 'Pound', question_id: questions[5].id },
   { body: 'Yen', question_id: questions[5].id },
   { body: 'Peseta', correct: true, question_id: questions[5].id },
-  { body: 'Frank', question_id: questions[5].id }
+  { body: 'Frank', question_id: questions[5].id },
   ])
 
 TestProgress.create([
