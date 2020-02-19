@@ -60,7 +60,7 @@ Answer.create([
   { body: 'Pound', question_id: questions[5].id },
   { body: 'Yen', question_id: questions[5].id },
   { body: 'Peseta', correct: true, question_id: questions[5].id },
-  { body: 'Frank', question_id: questions[5].id },
+  { body: 'Frank', question_id: questions[5].id }
   ])
 
 TestProgress.create([
