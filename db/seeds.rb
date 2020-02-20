@@ -33,19 +33,20 @@ questions = Question.create([
 
 Answer.create([
   { body: 'Berlin', correct: true, question_id: questions[0].id },
-  { body: 'Paris', question_id: questions[0].id },
-  { body: 'Madrid', question_id: questions[0].id },
-  { body: 'Vienna', question_id: questions[0].id },
+#  { body: 'Paris', question_id: questions[0].id },
+#  { body: 'Madrid', question_id: questions[0].id },
+#  { body: 'Vienna', question_id: questions[0].id },
 
-  { body: 'London', question_id: questions[1].id },
+#  { body: 'London', question_id: questions[1].id },
   { body: 'Oslo', question_id: questions[1].id },
-  { body: 'Paris', question_id: questions[1].id },
-  { body: 'Minsk', question_id: questions[1].id },
+  { body: 'Paris',correct: true question_id: questions[1].id },
+#  { body: 'Minsk', question_id: questions[1].id },
 
   { body: 'Sydney', question_id: questions[2].id },
   { body: 'Beijing', correct: true, question_id: questions[2].id },
   { body: 'Moscow', question_id: questions[2].id },
   { body: 'Shanghai', question_id: questions[2].id },
+  { body: 'SPB', question_id: questions[2].id },
 
   { body: 'Seoul', question_id: questions[3].id },
   { body: 'Yokohama', question_id: questions[3].id },
