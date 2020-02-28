@@ -1,6 +1,6 @@
-<h1><%= question_header(@question) %></h1>
+<h1>Question info</h1>
 
-<%= render 'form' %>
+<%= @question.inspect %>
 
 <br/>
 <%= link_to 'Back to questions', test_path(@question.test) %>
