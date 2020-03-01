@@ -33,14 +33,14 @@ questions = Question.create([
 
 Answer.create([
   { body: 'Berlin', correct: true, question_id: questions[0].id },
-#  { body: 'Paris', question_id: questions[0].id },
-#  { body: 'Madrid', question_id: questions[0].id },
-#  { body: 'Vienna', question_id: questions[0].id },
+  { body: 'Paris', question_id: questions[0].id },
+  { body: 'Madrid', question_id: questions[0].id },
+  { body: 'Vienna', question_id: questions[0].id },
 
-#  { body: 'London', question_id: questions[1].id },
+  { body: 'London', question_id: questions[1].id },
   { body: 'Oslo', question_id: questions[1].id },
-  { body: 'Paris',correct: true question_id: questions[1].id },
-#  { body: 'Minsk', question_id: questions[1].id },
+  { body: 'Paris',correct: true, question_id: questions[1].id },
+  { body: 'Minsk', question_id: questions[1].id },
 
   { body: 'Sydney', question_id: questions[2].id },
   { body: 'Beijing', correct: true, question_id: questions[2].id },
@@ -65,6 +65,6 @@ Answer.create([
   ])
 
 TestProgress.create([
-  { user_id: users[0].id, test_id: tests[0].id, question_id: questions[0].id },
-  { user_id: users[1].id, test_id: tests[1].id, question_id: questions[2].id }
+  { user_id: users[0].id, test_id: tests[0].id },
+  { user_id: users[1].id, test_id: tests[1].id }
   ])

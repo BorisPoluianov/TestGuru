@@ -1,6 +1,6 @@
 class Answer < ApplicationRecord
   validates :body, presence: true
-  validates_associated :question
+  validates_associated :question, on: :create
 
   belongs_to :question
 
