@@ -1,0 +1,20 @@
+<h1><%= @test_progress.test.title %> Test Progress</h1>
+
+<p>Question <%= @test_progress.current_question_number %> of <%= @test_progress.test.questions.count %></p>
+
+<b>
+  <%= @test_progress.current_question.body %>
+</b>
+
+<%= form_with url: test_progress_path(@test_progress), method: :put, local: true do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @test_progress.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+
+  <p>
+    <%= form.submit 'Next' %>
+  </p>
+<% end %>

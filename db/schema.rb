@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_150438) do
+ActiveRecord::Schema.define(version: 2020_02_29_191559) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -36,13 +36,13 @@ ActiveRecord::Schema.define(version: 2020_02_19_150438) do
   end
 
   create_table "test_progresses", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "test_id", null: false
-    t.integer "question_id", null: false
-    t.integer "answers", default: 0
+    t.integer "user_id"
+    t.integer "test_id"
+    t.integer "current_question_id"
+    t.integer "questions_passed", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_test_progresses_on_question_id"
+    t.index ["current_question_id"], name: "index_test_progresses_on_current_question_id"
     t.index ["test_id"], name: "index_test_progresses_on_test_id"
     t.index ["user_id"], name: "index_test_progresses_on_user_id"
   end
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_150438) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
-  add_foreign_key "test_progresses", "questions"
+  add_foreign_key "test_progresses", "questions", column: "current_question_id"
   add_foreign_key "test_progresses", "tests"
   add_foreign_key "test_progresses", "users"
   add_foreign_key "tests", "categories"

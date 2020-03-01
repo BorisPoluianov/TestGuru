@@ -65,6 +65,6 @@ Answer.create([
   ])
 
 TestProgress.create([
-  { user_id: users[0].id, test_id: tests[0].id, question_id: questions[0].id },
-  { user_id: users[1].id, test_id: tests[1].id, question_id: questions[2].id }
+  { user_id: users[0].id, test_id: tests[0].id },
+  { user_id: users[1].id, test_id: tests[1].id }
   ])
