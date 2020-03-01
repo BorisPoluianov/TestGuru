@@ -31,11 +31,12 @@ class TestProgress < ApplicationRecord
   private
 
   def before_save_set_question
-    self.current_question = if self.current_question.nil?
-                              test.questions.first
-                            else
-                              next_question
-                            end
+    self.current_question =
+      if self.current_question.nil?
+        test.questions.first
+      else
+        next_question
+      end
   end
 
   def correct_answer?(answer_ids)
