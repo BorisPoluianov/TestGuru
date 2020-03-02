@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to tests_path
     else
-      render :new
+      redirect_to users_new_path, alert: 'Not valid email or password'
     end
   end
 

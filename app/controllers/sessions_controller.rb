@@ -11,7 +11,12 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tests_path
     else
-      render :new
+      redirect_to sessions_new_path, alert: 'Bad email or password'
     end
+  end
+
+  def destroy
+    session.delete(:user_id)
+    redirect_to root_path
   end
 end
