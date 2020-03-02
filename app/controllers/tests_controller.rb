@@ -1,6 +1,5 @@
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy start]
-#  before_action :find_user, only: %i[start]
 
   def index
     @tests = Test.all
