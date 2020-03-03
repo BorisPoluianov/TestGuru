@@ -9,12 +9,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      if cookies[:path]
-        redirect_to cookies[:path]
-        cookies.delete :path
-      else
-        redirect_to root_path
-      end
+      redirect_to cookies[:path] || root_path
     else
       redirect_to sessions_new_path, alert: 'Bad email or password'
     end
@@ -22,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
+    cookies.delete :path
     redirect_to root_path
   end
 end
