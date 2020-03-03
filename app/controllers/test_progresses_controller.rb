@@ -9,7 +9,7 @@ class TestProgressesController < ApplicationController
 
   def update
     @test_progress.accept!(params[:answer_ids])
-    
+
     if @test_progress.completed?
       redirect_to result_test_progress_path(@test_progress)
     else
