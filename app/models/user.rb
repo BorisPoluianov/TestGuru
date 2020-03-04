@@ -9,6 +9,8 @@ class User < ApplicationRecord
          :validatable,
          :confirmable
 
+  validates :first_name, :last_name, presence: true
+
   has_many :test_progresses
   has_many :tests, through: :test_progresses
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
@@ -20,5 +22,9 @@ class User < ApplicationRecord
 
   def test_progress(test)
     test_progresses.order(created_at: :desc).find_by(test_id: test.id)
+  end
+
+  def full_name
+    first_name + ' ' + last_name
   end
 end
