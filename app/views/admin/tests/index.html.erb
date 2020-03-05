@@ -7,10 +7,14 @@
       <th>Questions count</th>
       <th>Level</th>
       <th>Category</th>
-      <th>Action</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
   <tbody>
     <%= render @tests %>
   </tbody>
 <table>
+
+<p>
+  <%= link_to 'New test', new_admin_test_path %>
+</p>
