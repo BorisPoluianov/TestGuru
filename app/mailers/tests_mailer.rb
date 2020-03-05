@@ -4,6 +4,7 @@ class TestsMailer < ApplicationMailer
     @user = test_progress.user
     @test = test_progress.test
 
-    mail to: @user.email, subject: "You just completed the TestGuru test!"
+    mail to: @user.email,
+      subject: "You just completed the TestGuru test!" if test_progress.test_passed?
   end
 end
