@@ -1,3 +1,9 @@
-<h1><%= @test_progress.test.title %> Test is completed.</h1>
+<h1><%= t('.completed_test', title: @test_progress.test.title) %>.</h1>
 
-<%= display_result(@test_progress) %>
+<% if @test_progress.test_passed? %>
+  <h2 style='color: green'><%= t('.test_passed') %></h2>
+<% else %>
+  <h2 style='color: red'><%= t('.test_failed') %></h2>
+<% end %>
+
+<p><%= t('.before_result') %> <%= colored_result(@test_progress) %><%= t('.after_result') %></p>

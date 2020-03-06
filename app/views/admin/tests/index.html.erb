@@ -1,13 +1,13 @@
-<h1>Tests</h1>
+<h1><%= t('.all_tests') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Questions count</th>
-      <th>Level</th>
-      <th>Category</th>
-      <th colspan="3">Actions</th>
+      <th><%= t('.test') %></th>
+      <th><%= t('.questions') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.category') %></th>
+      <th colspan="3"><%= t('.actions') %></th>
     </tr>
   </thead>
   <tbody>
@@ -16,5 +16,5 @@
 <table>
 
 <p>
-  <%= link_to 'New test', new_admin_test_path %>
+  <%= link_to t('.new_test'), new_admin_test_path %>
 </p>
