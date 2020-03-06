@@ -112,3 +112,9 @@ en:
     test:
       start: Start
       test_title: "Test %{title}"
+  helpers:
+    submit:
+      user:
+        create: 'Sign up'
+    select:
+      prompt: 'Choose category'

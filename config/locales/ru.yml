@@ -115,3 +115,9 @@ ru:
     test:
       start: Старт
       test_title: "Тест - %{title}"
+  helpers:
+    submit:
+      user:
+        create: 'Зарегистрироваться'
+    select:
+      prompt: 'Выберите категорию'
