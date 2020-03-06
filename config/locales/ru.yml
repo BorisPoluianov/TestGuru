@@ -1,0 +1,117 @@
+---
+ru:
+  activerecord:
+    attributes:
+      answer:
+        body: Ответ
+        correct: Правильно
+      question:
+        body: Вопрос
+      test:
+        category_id: Категория
+        title: Название
+        level: Уровень
+      user:
+        email: Email
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        remember_me: Запомнить
+        first_name: Имя
+        last_name: Фамилия
+    models:
+      answer: Ответ
+      question: Вопрос
+      test: Тест
+  admin:
+    answers:
+      edit:
+        header: "Изменение ответа"
+      new:
+        header: "Создание нового ответа"
+        question: "Вопрос"
+      show:
+        answer: Ответ
+        correct: Правильно
+        header: "Ответ на вопрос %{body}"
+    nav:
+      panel_title: "Панель администратора"
+      greetings: "Приветствуем, %{full_name}"
+    questions:
+      edit:
+        header: "Изменение вопроса теста: %{title}"
+      new:
+        header: "Создание нового вопроса для теста: %{title}"
+      show:
+        answers: Ответы
+        header: "Вопрос"
+        new_answer: "Новый ответ"
+    tests:
+      new:
+        create: "Создание нового теста"
+      edit:
+        header: "Изменение теста"
+      index:
+        actions: Действия
+        all_tests: "Все тесты"
+        category: Категория
+        level: Уровень
+        new_test: "Новый тест"
+        questions: Вопросы
+        test: Тест
+      show:
+        actions: Действия
+        category: Категория
+        header: Тест
+        level: Уровень
+        new_question: "Новый вопрос"
+        question: Вопрос
+      test:
+        test_title: "Тест: %{title}"
+  back: Назад
+  delete: Удалить
+  edit: Изменить
+  hello: "Привет мир"
+  layouts:
+    admin:
+      html_title: "Панель администратора"
+    footer:
+      developed: "Разработчик - %{full_name}"
+      info: "Этот проект - часть учебного курса по Ruby on Rails проводимого"
+      repo: "Репозиторий проекта"
+      school_info: "онлайн школа для разработчиков"
+    navbar:
+      all_tests: "Все тесты"
+      greetings: "Приветствуем, %{email}"
+  login: "Войти"
+  logout: "Выйти"
+  shared:
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        other: "Обнружено %{count} ошибки"
+  show: Посмотреть
+  sign_up: "Зарегистрироваться"
+  sure?: "Вы уверены?"
+  test_progresses:
+    result:
+      after_result: "% вопросов правильно"
+      before_result: "Вы ответили на"
+      completed_test: "Тест %{title} завершен"
+      test_failed: "Тест провален"
+      test_passed: "Тест сдан"
+    show:
+      header: "Прохождение теста - %{title}"
+      next: Next
+      question_number: "Вопрос %{q_number} из %{q_count}"
+  tests:
+    index:
+      action: Действие
+      all_tests: "Все тесты"
+      level: Уровень
+      questions: "Всего вопросов"
+      test: Тест
+    test:
+      start: Старт
+      test_title: "Тест - %{title}"
