@@ -1,9 +1,9 @@
-<%= link_to 'All tests', tests_path %><br>
+<%= link_to t('.all_tests'), tests_path %><br>
 
 <% if signed_in? %>
-  <p> Greetings, <%= current_user.email %> <%= link_to 'Guru!', root_path %> |
-    <%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
+  <%= t('.greetings', email: current_user.first_name) %> <%= link_to 'Guru', root_path %> |
+    <%= link_to t('logout'), destroy_user_session_path, method: :delete %>
 <% else %>
-  <%= link_to 'Sign up', new_user_registration_path %> |
-  <%= link_to 'Log in', new_user_session_path %>
+  <%= link_to t('sign_up'), new_user_registration_path %> |
+  <%= link_to t('login'), new_user_session_path %>
 <% end %>

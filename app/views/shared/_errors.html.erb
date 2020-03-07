@@ -1,10 +1,10 @@
 <% if entity.errors.present? %>
   <div>
-    <b><%= pluralize(entity.errors.count, 'Error') %> detected:</b>
+    <b><%= t('.header', count: resource.errors.count) %>:</b>
     <ul>
       <% entity.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
   </div>
-<% end %> 
+<% end %>

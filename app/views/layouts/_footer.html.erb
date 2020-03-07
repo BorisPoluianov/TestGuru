@@ -3,9 +3,9 @@
 <br/>
 <hr/>
 <footer>
-  <p><%= current_year %> | Developed by: Boris Poluianov |
-    Project's repository: <%= github_url('BorisPoluianov', 'TestGuru') %></p>
-  <p>This project is part of the basic Ruby on Rails course provided by:
+  <p><%= current_year %> | <%= t('.developed', full_name: 'Boris Poluianov' )%>|
+    <%= t('.repo') %>: <%= github_url('BorisPoluianov', 'TestGuru') %></p>
+  <p><%= t('.info') %>:
     <%= link_to 'Thinknetica.com', 'http://thinknetica.com/',
-    target: :_blank %> - The Online School for Developers.</p>
+    target: :_blank %> - <%= t('.school_info') %>.</p>
 </footer>
