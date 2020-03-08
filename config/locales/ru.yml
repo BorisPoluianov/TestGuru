@@ -34,8 +34,9 @@ ru:
         correct: Правильно
         header: "Ответ на вопрос %{body}"
     nav:
-      panel_title: "Панель администратора"
+      admin_panel: "Панель администратора"
       greetings: "Приветствуем, %{full_name}"
+      all_tests: Все тесты
     questions:
       edit:
         header: "Изменение вопроса теста: %{title}"
@@ -73,7 +74,7 @@ ru:
   hello: "Привет мир"
   layouts:
     admin:
-      html_title: "Панель администратора"
+      admin_panel: "Панель администратора"
     footer:
       developed: "Разработчик - %{full_name}"
       info: "Этот проект - часть учебного курса по Ruby on Rails проводимого"

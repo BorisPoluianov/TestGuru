@@ -1,7 +1,5 @@
-<h1><%= t('.all_tests') %></h1>
-
-<table>
-  <thead>
+<table class="table mt-1">
+  <thead class="thead-light">
     <tr>
       <th><%= t('.test') %></th>
       <th><%= t('.questions') %></th>
@@ -13,8 +11,8 @@
   <tbody>
     <%= render @tests %>
   </tbody>
-<table>
+</table>
 
 <p>
-  <%= link_to t('.new_test'), new_admin_test_path %>
+  <%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-primary mt-2' %>
 </p>
