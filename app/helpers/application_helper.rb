@@ -1,7 +1,13 @@
 module ApplicationHelper
-  def flash_message(message)
-    if flash[message]
-      content_tag :p, flash[:alert], class: 'flash alert'
+
+  def flash_class(type)
+    case type
+      when :notice then "alert alert-info"
+      when :success then "alert alert-success"
+      when :error then "alert alert-danger"
+      when :alert then "alert alert-warning"
+      else type.to_s
     end
   end
+
 end
