@@ -104,6 +104,8 @@ en:
       header: "Passing the %{title} test"
       next: Next
       question_number: "Question %{q_number} of %{q_count}"
+    gits:
+      fail: 'Error occured, try later'
   tests:
     index:
       action: Action

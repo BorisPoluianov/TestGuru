@@ -1,5 +1,5 @@
 class TestProgressesController < ApplicationController
-  before_action :find_test_progress, only: %i[show result update]
+  before_action :find_test_progress, only: %i[show result update gist]
 
   def show
   end
@@ -18,9 +18,28 @@ class TestProgressesController < ApplicationController
     end
   end
 
+  def gist
+    result = GistQuestionService.new(@test_progress.current_question).call
+
+    flash_options = if result
+                      create_gist!(result.html_url)
+                      { notice: result.html_url }
+                    else
+                      { alert: t('.failure') }
+                    end
+    redirect_to @test_progress, flash_options
+  end
+
   private
 
   def find_test_progress
     @test_progress = TestProgress.find(params[:id])
+  end
+
+  def create_gist!(url)
+    current_user.gists.create!(
+      question: @test_progress.current_question,
+      url: url
+    )
   end
 end
