@@ -1,5 +1,5 @@
-class GistsController < Admin::BaseController
+class Admin::GistsController < Admin::BaseController
   def index
-    @gist = Gist.all
+    @gists = Gist.all
   end
 end
