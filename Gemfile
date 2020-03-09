@@ -21,10 +21,14 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# Authentication
+# Use Authentication through Devise
 gem 'devise', '~> 4.7', '>= 4.7.1'
-# Localization
+# Use Localization
 gem 'rails-i18n', '~> 6.0', '>= 6.0.0'
+# Use jquery
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+# Use Bootstrap
+gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 
 
 # Use Active Storage variant

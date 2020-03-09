@@ -1,14 +1,28 @@
-<%= form_with model: [:admin, @test], local: true do |form| %>
-  <% render 'shared/errors', entity: @test %>
+<div class="row">
+  <div class="col col-mb-4">
 
-  <%= form.label :title %>
-  <%= form.text_field :title, id: :test_title %>
+    <%= form_with model: [:admin, @test], local: true do |form| %>
+      <% render 'shared/errors', entity: @test %>
 
-  <%= form.label :level %>
-  <%= form.number_field :level %>
+      <div class="form-group">
+        <p>
+          <%= form.label :title %>
+          <%= form.text_field :title, id: :test_title, class: "form-control" %>
+        </p>
 
-  <%= form.label :category_id %>
-  <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+        <p>
+          <%= form.label :level %>
+          <%= form.number_field :level, class: "form-control" %>
+        </p>
 
-  <%= form.submit %>
-<% end %>
+        <p>
+          <%= form.label :category_id %>
+          <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-control" %>
+        </p>
+
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

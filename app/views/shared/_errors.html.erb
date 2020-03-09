@@ -1,10 +1,12 @@
 <% if entity.errors.present? %>
-  <div>
-    <b><%= t('.header', count: resource.errors.count) %>:</b>
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">
+    <%= t('.header', count: entity.errors.count) %>
+  </h4>
     <ul>
       <% entity.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
-  </div>
+</div>
 <% end %>

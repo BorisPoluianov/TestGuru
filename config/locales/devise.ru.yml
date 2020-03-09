@@ -59,7 +59,7 @@ ru:
     shared:
       links:
         didn_t_receive_confirmation_instructions: "Не получили письмо с подтвержедением?"
-        forgot_your_password: "Забыли пароль"
+        forgot_your_password: "Забыли пароль?"
     unlocks:
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
       send_paranoid_instructions: "Если ваша учётная запись существует, то в течение нескольких минут вы получите письмо с инструкциями по её разблокировке."

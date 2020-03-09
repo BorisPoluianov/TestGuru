@@ -1,7 +1,7 @@
-<h1><%= t('.header') %>: <%= @test.title %></h1>
-<h2><%= t('.category') %>: <%= @test.category.title %>, <%= t('.level') %>: <%= @test.level %></h2>
+<h3 class="mb-4"><%= t('.header') %>: <%= @test.title %></h3>
+<h4><%= t('.category') %>: <%= @test.category.title %>, <%= t('.level') %>: <%= @test.level %></h4>
 
-<div>
+<div class="mb-4">
   <table>
     <thead>
       <tr>
@@ -17,6 +17,6 @@
   <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
 </div>
 
-<br/>
+
 <%= link_to t('back'), admin_tests_path %> |
 <%= link_to t('edit'), edit_admin_test_path(@test) %>

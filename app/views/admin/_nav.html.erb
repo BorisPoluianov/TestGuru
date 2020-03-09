@@ -1,10 +1,28 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title"><%= t('.panel_title') %></span>
+<nav class="navbar navbar-expand-lg"
+  style="background-color: #e3f2fd;">
+  <a class="navbar-brand"><%= link_to 'TestGuru', root_path, class: 'navbar-brand' %></a>
+  <button class="navbar-toggler" type="button"
+    data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div class="nav-admin user">
-    <p><%= t('.greetings', full_name: current_user.full_name) %>
-         <%= link_to 'Guru', root_path %> |
-         <%= link_to t('logout'), destroy_user_session_path, method: :delete %></p>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <p><%= link_to t('.all_tests'), tests_path, class: 'nav-link' %></p>
+      </li>
+    </ul>
 
+    <% if signed_in? %>
+      <p><%= t('.greetings', full_name: current_user.full_name) %> <%= link_to 'Guru', root_path %> |
+      <%= link_to t('logout'), destroy_user_session_path, method: :delete %></p>
+    <% else %>
+      <p><%= link_to t('sign_up'), new_user_registration_path %> |
+      <%= link_to t('login'), new_user_session_path %></p>
+    <% end %>
   </div>
-</div>
+</nav>
+<p>
+
+</p>

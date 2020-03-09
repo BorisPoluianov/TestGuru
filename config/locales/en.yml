@@ -33,7 +33,7 @@ en:
         correct: Correct
         header: "Answer for question %{body}"
     nav:
-      panel_title: "Admin panel"
+      all_tests: All tests
       greetings: "Greetings, %{full_name}"
     questions:
       edit:
@@ -72,13 +72,14 @@ en:
   hello: "Hello world"
   layouts:
     admin:
-      html_title: "Admin Panel"
+      admin_panel: "Admin Panel"
     footer:
       developed: "Developed by %{full_name}"
       info: "This project is part of the basic Ruby on Rails course provided by"
       repo: "Project's repository"
       school_info: "The online-school for developers"
     navbar:
+      admin_panel: "Admin panel"
       all_tests: "All tests"
       greetings: "Greetings, %{email}"
   login: "Sign in"

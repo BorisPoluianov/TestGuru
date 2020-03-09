@@ -1,21 +1,32 @@
-<h1><%= t('.header', title: @test_progress.test.title) %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col md-4">
 
-<%= t('.question_number',
-  q_number: @test_progress.current_question_number,
-  q_count: @test_progress.test.questions.count) %>
+      <h3><%= t('.header', title: @test_progress.test.title) %></h3>
 
-<br/>
-<h2><%= @test_progress.current_question.body %></h2>
+      <p>
+        <%= t('.question_number',
+        q_number: @test_progress.current_question_number,
+        q_count: @test_progress.test.questions.count) %>
+      </p>
 
-<%= form_with url: test_progress_path(@test_progress), method: :put, local: true do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_progress.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
+      <h4><%= @test_progress.current_question.body %>?</h4>
 
-  <p>
-    <%= form.submit t('.next') %>
-  </p>
-<% end %>
+      <%= form_with url: test_progress_path(@test_progress), method: :put, local: true do |form| %>
+        <%= form.collection_check_boxes :answer_ids, @test_progress.current_question.answers, :id, :body, include_hidden: false do |b| %>
+
+        <div class='form-group'>
+          <p>
+            <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+            <%= b.label %>
+          </p>
+        <% end %>
+
+        <p>
+          <%= form.submit t('.next'), class: 'btn btn-success' %>
+        </p>
+
+        </div>
+      <% end %>
+
+  </div>
+</div>
