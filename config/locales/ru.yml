@@ -1,5 +1,6 @@
 ---
 ru:
+  gist_description: 'Вопрос теста TestGuru по теме: #{title}'
   activerecord:
     attributes:
       answer:

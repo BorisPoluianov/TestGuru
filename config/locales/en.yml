@@ -1,5 +1,6 @@
 ---
 en:
+  gist_description: 'A #{title} test question from TestGuru'
   activerecord:
     attributes:
       answer:
