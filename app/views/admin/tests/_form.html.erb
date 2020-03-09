@@ -7,17 +7,17 @@
       <div class="form-group">
         <p>
           <%= form.label :title %>
-          <%= form.text_field :title, id: :test_title %>
+          <%= form.text_field :title, id: :test_title, class: "form-control" %>
         </p>
 
         <p>
           <%= form.label :level %>
-          <%= form.number_field :level %>
+          <%= form.number_field :level, class: "form-control" %>
         </p>
 
         <p>
           <%= form.label :category_id %>
-          <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+          <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-control" %>
         </p>
 
         <%= form.submit class: 'btn btn-primary' %>

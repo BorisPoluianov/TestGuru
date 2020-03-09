@@ -34,7 +34,6 @@ ru:
         correct: Правильно
         header: "Ответ на вопрос %{body}"
     nav:
-      admin_panel: "Панель администратора"
       greetings: "Приветствуем, %{full_name}"
       all_tests: Все тесты
     questions:
@@ -81,6 +80,7 @@ ru:
       repo: "Репозиторий проекта"
       school_info: "онлайн школа для разработчиков"
     navbar:
+      admin_panel: "Панель администратора"
       all_tests: "Все тесты"
       greetings: "Приветствуем, %{email}"
   login: "Войти"

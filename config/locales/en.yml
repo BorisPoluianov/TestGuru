@@ -33,7 +33,6 @@ en:
         correct: Correct
         header: "Answer for question %{body}"
     nav:
-      admin_panel: "Admin panel"
       all_tests: All tests
       greetings: "Greetings, %{full_name}"
     questions:
@@ -80,6 +79,7 @@ en:
       repo: "Project's repository"
       school_info: "The online-school for developers"
     navbar:
+      admin_panel: "Admin panel"
       all_tests: "All tests"
       greetings: "Greetings, %{email}"
   login: "Sign in"
