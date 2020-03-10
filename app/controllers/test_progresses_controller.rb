@@ -19,14 +19,16 @@ class TestProgressesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_progress.current_question).call
+    service = GistQuestionService.new(@test_progress.current_question)
+    response = service.call
 
-    flash_options = if result
-                      create_gist!(result.html_url)
-                      { notice: result.html_url }
+    flash_options = if service.success?
+                      create_gist!(response.html_url)
+                      { notice: response.html_url }
                     else
-                      { alert: t('.failure') }
+                      { alert: t('.fail') }
                     end
+
     redirect_to @test_progress, flash_options
   end
 
