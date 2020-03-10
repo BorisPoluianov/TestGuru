@@ -1,5 +1,6 @@
 ---
 en:
+  gist_description: 'A %{title} test question from TestGuru'
   activerecord:
     attributes:
       answer:
@@ -103,6 +104,8 @@ en:
       header: "Passing the %{title} test"
       next: Next
       question_number: "Question %{q_number} of %{q_count}"
+    gits:
+      fail: 'Error occured, try later'
   tests:
     index:
       action: Action
