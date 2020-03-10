@@ -11,7 +11,6 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
-  has_many :gists
   has_many :test_progresses
   has_many :tests, through: :test_progresses
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id

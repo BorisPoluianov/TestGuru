@@ -1,6 +1,5 @@
 ---
 ru:
-  gist_description: 'Вопрос теста TestGuru по теме: %{title}'
   activerecord:
     attributes:
       answer:
@@ -107,8 +106,6 @@ ru:
       header: "Прохождение теста - %{title}"
       next: Next
       question_number: "Вопрос %{q_number} из %{q_count}"
-    gist:
-      fail: "Произошла ошибка, повторите позже"
   tests:
     index:
       action: Действие

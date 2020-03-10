@@ -6,10 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
-# HOSSTNAME = ENV['HOSTNAME']
-GITHUB_TOKEN= ENV['GITHUB_TOKEN']
-
 module TestGuru
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
