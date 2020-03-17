@@ -33,6 +33,8 @@ gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'octokit', '~> 4.16', '>= 4.16.0'
 # Use Dotenv-rails
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
+# Use Octicons_helper
+gem 'octicons_helper', '~> 9.6', '>= 9.6.0'
 
 
 # Use Active Storage variant
