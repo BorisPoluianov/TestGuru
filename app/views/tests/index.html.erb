@@ -1,7 +1,11 @@
 <table class="table mt-1">
   <thead class="thead-light">
     <tr>
-      <th><%= t('.test') %></th>
+      <th class="sort-by-title pointer">
+        <%= t('.test') %>
+        <%= octicon 'arrow-up', class: 'text-success' %>
+        <%= octicon 'arrow-down', class: 'text-success' %>
+      </th>
       <th><%= t('.questions') %></th>
       <th><%= t('.level') %></th>
       <th><%= t('.action') %></th>
