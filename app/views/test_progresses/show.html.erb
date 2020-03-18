@@ -3,11 +3,19 @@
 
       <h3><%= t('.header', title: @test_progress.test.title) %></h3>
 
-      <p>
-        <%= t('.question_number',
-        q_number: @test_progress.current_question_number,
-        q_count: @test_progress.test.questions.count) %>
-      </p>
+      <div class="progress" style="height: 40px;">
+        <%= content_tag :div,
+                        class: 'progress-bar progress-bar-striped progress-bar-animated bg-success',
+                        data: {
+                          question_number: @test_progress.current_question_number,
+                          questions_count: @test_progress.test.questions.count
+                        } do %>
+          <%= t('.question_number',
+            q_number: @test_progress.current_question_number,
+            q_count: @test_progress.test.questions.count) %>
+        <% end %>
+
+      </div>
 
       <h4><%= @test_progress.current_question.body %>?</h4>
 
