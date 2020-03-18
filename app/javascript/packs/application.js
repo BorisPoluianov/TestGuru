@@ -12,6 +12,7 @@ import "bootstrap"
 import "../stylesheets/application"
 import "../utilities/sorting"
 import "../utilities/password"
+import "../utilities/form_inline"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
