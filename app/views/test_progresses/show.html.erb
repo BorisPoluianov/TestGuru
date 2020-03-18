@@ -7,7 +7,7 @@
         <%= content_tag :div,
                         class: 'progress-bar progress-bar-striped progress-bar-animated bg-success',
                         data: {
-                          question_number: @test_progress.current_question_number,
+                          questions_passed: @test_progress.questions_passed,
                           questions_count: @test_progress.test.questions.count
                         } do %>
           <%= t('.question_number',
