@@ -68,10 +68,13 @@ ru:
         question: Вопрос
       test:
         test_title: "Тест: %{title}"
+      form_inline:
+        submit: Ok
   back: Назад
   delete: Удалить
   edit: Изменить
   hello: "Привет мир"
+  cansel: Отменить
   layouts:
     admin:
       admin_panel: "Панель администратора"

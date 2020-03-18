@@ -67,10 +67,13 @@ en:
         question: Question
       test:
         test_title: "Test %{title}"
+      form_inline:
+        submit: Ok
   back: Back
   delete: Delete
   edit: Edit
   hello: "Hello world"
+  cansel: Cansel
   layouts:
     admin:
       admin_panel: "Admin Panel"

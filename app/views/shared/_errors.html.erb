@@ -1,12 +1,13 @@
-<% if entity.errors.present? %>
-<div class="alert alert-danger" role="alert">
+<% if resource&.errors.present? %>
+  <%= content_tag :div, class: 'resource-errors alert alert-danger',
+    data: { resource_id: resource.id } do %>
   <h4 class="alert-heading">
-    <%= t('.header', count: entity.errors.count) %>
+    <%= t('.header', count: resource.errors.count) %>
   </h4>
     <ul>
-      <% entity.errors.full_messages.each do |msg| %>
+      <% resource.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
-</div>
+    <% end %>
 <% end %>
