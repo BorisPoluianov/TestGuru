@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create([
+admins = Admin.create([
   { email: 'user1@example.com', password: 'password1', first_name: 'John', last_name: 'McKlein' },
+  ])
+
+users = User.create([
   { email: 'user2@example.com', password: 'password2', first_name: 'Hans', last_name: 'Gruber' }
   ])
 
@@ -17,9 +20,9 @@ categories = Category.create([
   ])
 
 tests = Test.create([
-  { title: 'Capitals of Europe', level: 1, category_id: categories[0].id, author_id: users[0].id },
-  { title: 'Capitals of Asia', level: 2, category_id: categories[0].id, author_id: users[0].id },
-  { title: 'Currencies of Europe', level: 2, category_id: categories[1].id, author_id: users[0].id }
+  { title: 'Capitals of Europe', level: 1, category_id: categories[0].id, author_id: admins[0].id },
+  { title: 'Capitals of Asia', level: 2, category_id: categories[0].id, author_id: admins[0].id },
+  { title: 'Currencies of Europe', level: 2, category_id: categories[1].id, author_id: admins[0].id }
   ])
 
 questions = Question.create([
@@ -66,5 +69,5 @@ Answer.create([
 
 TestProgress.create([
   { user_id: users[0].id, test_id: tests[0].id },
-  { user_id: users[1].id, test_id: tests[1].id }
+  { user_id: admins[0].id, test_id: tests[1].id }
   ])
