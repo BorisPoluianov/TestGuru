@@ -82,6 +82,7 @@ en:
       info: "This project is part of the basic Ruby on Rails course provided by"
       repo: "Project's repository"
       school_info: "The online-school for developers"
+      feedback: 'Leave feedback'
     navbar:
       admin_panel: "Admin panel"
       all_tests: "All tests"
@@ -119,6 +120,13 @@ en:
     test:
       start: Start
       test_title: "Test %{title}"
+  feedbacks:
+    new:
+      header: 'Feedback'
+    form:
+      send_email: 'Send'
+    create:
+      succes: 'Was sent successfully'
   helpers:
     submit:
       user:
