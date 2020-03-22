@@ -1,9 +1,8 @@
 class Question < ApplicationRecord
   validates :body, presence: true
-  validates :answers, length: { in: 0..3 }
 
   belongs_to :test
-  has_many :gists
-  has_many :answers
-  has_many :test_progresses
+  has_many :gists, dependent: :destroy
+  has_many :answers, dependent: :destroy
+  has_many :test_progresses, foreign_key: :current_question_id, dependent: :destroy
 end

@@ -1,6 +1,7 @@
 ---
 en:
   gist_description: 'A %{title} test question from TestGuru'
+  limit_max_answers: 'Answers limit was reached'
   activerecord:
     attributes:
       answer:

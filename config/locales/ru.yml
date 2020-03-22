@@ -1,6 +1,7 @@
 ---
 ru:
   gist_description: 'Вопрос теста TestGuru по теме: %{title}'
+  limit_max_answers: 'Достигнут предел для создания ответов'
   activerecord:
     attributes:
       answer:
