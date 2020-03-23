@@ -42,8 +42,9 @@ class TestProgress < ApplicationRecord
   def correct_answer?(answer_ids)
     correct_answers_count = correct_answers.count
 
+    answer_ids &&
     correct_answers_count == correct_answers.where(id: answer_ids).count &&
-      correct_answers_count == answer_ids.count
+    correct_answers_count == answer_ids.count
   end
 
   def correct_answers
