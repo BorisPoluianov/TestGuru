@@ -23,6 +23,11 @@ class Test < ApplicationRecord
     joins(:category)
     .where(categories: { title: category })
   }
+  scope :available_tests, -> {
+    includes(questions: :answers)
+    .where.not(questions: { id: nil }, answers: { id: nil })
+  }
+
 
   def self.display_tests_title_by_desc(category)
     by_category(category)

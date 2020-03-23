@@ -1,11 +1,13 @@
-<% if resource.errors.any? %>
-  <%= I18n.t("errors.messages.not_saved",
-             count: resource.errors.count,
-             resource: resource.class.model_name.human.downcase)
-   %>
-<ul>
-  <% resource.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+<% if resource&.errors.present? %>
+<%= content_tag :div,
+  class: 'resource-errors alert alert-danger',
+  data: { resource_id: resource.id } do %>
+  <h4 class="alert-heading"><%= t('.header',
+    count: resource.errors.count) %></h4>
+  <ul>
+    <% resource.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
 <% end %>

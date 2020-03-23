@@ -109,6 +109,7 @@ en:
       header: "Passing the %{title} test"
       next: Next
       question_number: "Question %{q_number} of %{q_count}"
+      fail: "There are no questions for this test"
     gits:
       fail: 'Error occured, try later'
   tests:

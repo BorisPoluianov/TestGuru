@@ -112,6 +112,7 @@ ru:
       header: "Прохождение теста - %{title}"
       next: Next
       question_number: "Вопрос %{q_number} из %{q_count}"
+      fail: "Для этого теста нет вопросов"
     gist:
       fail: "Произошла ошибка, повторите позже"
   tests:

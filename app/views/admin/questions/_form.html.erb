@@ -1,8 +1,18 @@
-<%= form_with model:[:admin, @test, @question], local: true do |form| %>
-  <% render 'shared/errors', resource: @question %>
+<div class="row">
+  <div class="col col-mb-4">
 
-  <%= form.label :body %>
-  <%= form.text_field :body, id: :question_body %>
+    <%= form_with model:[:admin, @test, @question], local: true do |form| %>
+      <%= render 'shared/errors', resource: @question %>
 
-  <%= form.submit %>
-<% end %>
+      <div class="form-group">
+        <p>
+          <%= form.label :body %>
+          <%= form.text_field :body, id: :question_body, class: "form-control" %>
+        </p>
+
+        <%= form.submit %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

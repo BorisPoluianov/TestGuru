@@ -1,8 +1,10 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[start]
+  before_action :find_test, only: :start
+
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    @tests = Test.all
+    @tests = Test.available_tests
   end
 
   def start
@@ -14,5 +16,9 @@ class TestsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def rescue_with_test_not_found
+    render plain: 'Requested resource not found'
   end
 end
