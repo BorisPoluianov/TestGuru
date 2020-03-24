@@ -10,8 +10,8 @@ class Test < ApplicationRecord
 
   belongs_to :category
   belongs_to :author, class_name: 'User'
-  has_many :questions
-  has_many :test_progresses
+  has_many :questions, dependent: :destroy
+  has_many :test_progresses, dependent: :destroy
   has_many :users, through: :test_progresses
 
   scope :level, -> (level) { where(level: level) }
@@ -23,6 +23,11 @@ class Test < ApplicationRecord
     joins(:category)
     .where(categories: { title: category })
   }
+  scope :available_tests, -> {
+    includes(questions: :answers)
+    .where.not(questions: { id: nil }, answers: { id: nil })
+  }
+
 
   def self.display_tests_title_by_desc(category)
     by_category(category)

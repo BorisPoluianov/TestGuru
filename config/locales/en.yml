@@ -1,6 +1,7 @@
 ---
 en:
   gist_description: 'A %{title} test question from TestGuru'
+  limit_max_answers: 'Answers limit was reached'
   activerecord:
     attributes:
       answer:
@@ -82,6 +83,7 @@ en:
       info: "This project is part of the basic Ruby on Rails course provided by"
       repo: "Project's repository"
       school_info: "The online-school for developers"
+      feedback: 'Leave feedback'
     navbar:
       admin_panel: "Admin panel"
       all_tests: "All tests"
@@ -107,6 +109,7 @@ en:
       header: "Passing the %{title} test"
       next: Next
       question_number: "Question %{q_number} of %{q_count}"
+      fail: "There are no questions for this test"
     gits:
       fail: 'Error occured, try later'
   tests:
@@ -119,6 +122,13 @@ en:
     test:
       start: Start
       test_title: "Test %{title}"
+  feedbacks:
+    new:
+      header: 'Feedback'
+    form:
+      send_email: 'Send'
+    create:
+      succes: 'Was sent successfully'
   helpers:
     submit:
       user:

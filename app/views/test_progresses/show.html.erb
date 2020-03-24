@@ -1,45 +1,40 @@
-<div class="row justify-content-center mt-3">
-  <div class="col md-4">
 
-      <h3><%= t('.header', title: @test_progress.test.title) %></h3>
+<h3><%= t('.header', title: @test_progress.test.title) %></h3>
 
-      <div class="progress" style="height: 40px;">
-        <%= content_tag :div,
-                        class: 'progress-bar progress-bar-striped progress-bar-animated bg-success',
-                        data: {
-                          questions_passed: @test_progress.questions_passed,
-                          questions_count: @test_progress.test.questions.count
-                        } do %>
-          <%= t('.question_number',
-            q_number: @test_progress.current_question_number,
-            q_count: @test_progress.test.questions.count) %>
-        <% end %>
+<div class="progress" style="height: 40px;">
+  <%= content_tag :div,
+                  class: 'progress-bar progress-bar-striped progress-bar-animated bg-success',
+                  data: {
+                    question_number: @test_progress.current_question_number,
+                    questions_count: @test_progress.test.questions.count
+                  } do %>
+    <%= t('.question_number',
+      q_number: @test_progress.current_question_number,
+      q_count: @test_progress.test.questions.count) %>
+  <% end %>
 
-      </div>
+</div>
 
-      <h4><%= @test_progress.current_question.body %>?</h4>
+<h4><%= @test_progress.current_question.body %>?</h4>
 
-      <p>
-        <%= link_to 'gits', gist_test_progress_path(@test_progress), method: :post, class: 'btn btn-info' %>
-      </p>
+<p>
+  <%= link_to 'gits', gist_test_progress_path(@test_progress), method: :post, class: 'btn btn-info' %>
+</p>
 
 
-      <%= form_with url: test_progress_path(@test_progress), method: :put, local: true do |form| %>
-        <%= form.collection_check_boxes :answer_ids, @test_progress.current_question.answers, :id, :body, include_hidden: false do |b| %>
+<%= form_with url: test_progress_path(@test_progress), method: :put, local: true do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @test_progress.current_question.answers, :id, :body, include_hidden: false do |b| %>
 
-        <div class='form-group'>
-          <p>
-            <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-            <%= b.label %>
-          </p>
-        <% end %>
+  <div class='form-group'>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
 
-        <p>
-          <%= form.submit t('.next'), class: 'btn btn-success' %>
-        </p>
-
-        </div>
-      <% end %>
+  <p>
+    <%= form.submit t('.next'), class: 'btn btn-success' %>
+  </p>
 
   </div>
-</div>
+<% end %>

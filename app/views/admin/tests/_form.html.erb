@@ -2,7 +2,7 @@
   <div class="col col-mb-4">
 
     <%= form_with model: [:admin, @test], local: true do |form| %>
-      <% render 'shared/errors', entity: @test %>
+      <%= render 'shared/errors', resource: @test %>
 
       <div class="form-group">
         <p>

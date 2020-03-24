@@ -1,6 +1,7 @@
 ---
 ru:
   gist_description: 'Вопрос теста TestGuru по теме: %{title}'
+  limit_max_answers: 'Достигнут предел для создания ответов'
   activerecord:
     attributes:
       answer:
@@ -83,6 +84,7 @@ ru:
       info: "Этот проект - часть учебного курса по Ruby on Rails проводимого"
       repo: "Репозиторий проекта"
       school_info: "онлайн школа для разработчиков"
+      feedback: 'Оставить отзыв'
     navbar:
       admin_panel: "Панель администратора"
       all_tests: "Все тесты"
@@ -110,6 +112,7 @@ ru:
       header: "Прохождение теста - %{title}"
       next: Next
       question_number: "Вопрос %{q_number} из %{q_count}"
+      fail: "Для этого теста нет вопросов"
     gist:
       fail: "Произошла ошибка, повторите позже"
   tests:
@@ -122,6 +125,13 @@ ru:
     test:
       start: Старт
       test_title: "Тест - %{title}"
+  feedbacks:
+    new:
+      header: 'Отзыв'
+    form:
+      send_email: 'Отправить'
+    create:
+      success: 'Успешно оптравлен'
   helpers:
     submit:
       user:
