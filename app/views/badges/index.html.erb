@@ -1,0 +1,12 @@
+<h2><%= t('.my_badges') %></h2>
+<table class="table">
+  <thead  class="thead-light">
+    <tr>
+      <th><%= t('.image') %></th>
+      <th><%= t('.title') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+</table>

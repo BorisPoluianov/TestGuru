@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :feedbacks
   has_many :gists
   has_many :test_progresses
+  has_many :badged_users
+  has_many :badges, through: :badged_users
   has_many :tests, through: :test_progresses
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
 
