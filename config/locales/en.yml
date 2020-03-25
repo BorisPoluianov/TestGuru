@@ -84,6 +84,12 @@ en:
         rule_parameter: 'Rule parameter'
         actions: 'Actions'
         new_badge: 'New badge'
+      create:
+        saved: 'Badge was successfully saved'
+      update:
+        updated: 'Badge was successfully updated'
+      destroy:
+        destroyed: 'Badge was successfully destroyed'
   back: Back
   delete: Delete
   edit: Edit

@@ -86,6 +86,12 @@ ru:
         rule_parameter: 'Параметр правила'
         actions: 'Действия'
         new_badge: 'Новый значок'
+      create:
+        saved: 'Значок был успешно сохранен'
+      update:
+        updated: 'Значок был успешно обновлен'
+      destroy:
+        destroyed: 'Значок был успешно удален'
   back: Назад
   delete: Удалить
   edit: Изменить

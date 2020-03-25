@@ -16,7 +16,7 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.new(badge_params)
 
     if @badge.save
-      redirect_to admin_badges_path, notice: 'Badge was saved successfully'
+      redirect_to admin_badges_path, notice: t('.saved')
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def update
     if @badge.update(badge_params)
-      redirect_to admin_badges_path, notice: 'Was updated successfully'
+      redirect_to admin_badges_path, notice: t('.updated')
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def destroy
     @badge.destroy
-    redirect_to admin_badges_path, notice: "Was destroyed"
+    redirect_to admin_badges_path, notice: t('.destroyed')
   end
 
   private
