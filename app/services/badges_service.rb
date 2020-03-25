@@ -1,8 +1,8 @@
 class BadgesService
   RULES = [
-      ['Category tests passed?', 1],
-      ['Test passed with first attempt?', 2],
-      ['Tests level passed?', 3]
+      [I18n.t('badges.category_passed'), 1],
+      [I18n.t('badges.first_attempt'), 2],
+      [I18n.t('badges.level_passed'), 3]
     ]
 
   def initialize(test_progress)
