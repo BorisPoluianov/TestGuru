@@ -47,8 +47,8 @@ class BadgesService
     level = level.to_i
     if @test_progress.test.level == level && @test_progress.passed
       ids_of_passed_tests = TestProgress.passed_tests(@user).pluck(:test_id)
-      ids_of_tests_by_level = Test.level(level)
-      ids_of_passed_tests & ids_of_tests_by_level = ids_of_tests_by_level
+      ids_of_tests_by_level = Test.level(level).pluck(:id)
+      ids_of_passed_tests & ids_of_tests_by_level == ids_of_tests_by_level
     end
   end
 end
