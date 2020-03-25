@@ -27,7 +27,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def update
     if @badge.update(badge_params)
-      redirect_to [:admin, @badge], notice: 'Was updated successfully'
+      redirect_to admin_badges_path, notice: 'Was updated successfully'
     else
       render :edit
     end

@@ -4,6 +4,11 @@ class TestProgress < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :before_save_set_question
+  before_update :before_update_set_passed
+
+  scope :passed_tests, -> user {
+    user.test_progresses.where(passed: true)
+  }
 
   MIN_RESULT = 85
 
@@ -32,19 +37,21 @@ class TestProgress < ApplicationRecord
 
   def before_save_set_question
     self.current_question =
-      if self.current_question.nil?
+      if completed?
         test.questions.first
       else
         next_question
       end
   end
 
+  def before_update_set_passed
+    self.passed = test_passed? if completed?
+  end
+
   def correct_answer?(answer_ids)
     correct_answers_count = correct_answers.count
 
-    answer_ids &&
-    correct_answers_count == correct_answers.where(id: answer_ids).count &&
-    correct_answers_count == answer_ids.count
+    answer_ids && correct_answers_count == correct_answers.where(id: answer_ids).count && correct_answers_count == answer_ids.count
   end
 
   def correct_answers

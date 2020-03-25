@@ -11,6 +11,7 @@ class TestProgressesController < ApplicationController
     @test_progress.accept!(params[:answer_ids])
 
     if @test_progress.completed?
+      BadgesService.new(@test_progress).call
       TestsMailer.completed_test(@test_progress).deliver_now
       redirect_to result_test_progress_path(@test_progress)
     else

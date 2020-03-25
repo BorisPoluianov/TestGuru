@@ -6,7 +6,7 @@
   </td>
   <td><%= test.questions.size %></td>
   <td><%= test.level %></td>
-  <td><%= test.category_id %></td>
+  <td><%= test.category.title %></td>
   <td><%= link_to t('show'), admin_test_path(test) %></td>
   <td><%= link_to t('edit'), edit_admin_test_path(test),
     data: { test_id: test.id }, class: 'form-inline-link' %></td>

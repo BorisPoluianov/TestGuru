@@ -7,18 +7,18 @@
       <div class="form-group">
       <p>
         <%= form.label :image %>
-        <%= form.text_field :image, class: 'form-control'  %>
+        <%= form.text_field :image, id: :image, class: 'form-control'  %>
       </p>
 
       <p>
         <%= form.label :title %>
-        <%= form.text_field :title, class: 'form-control'  %>
+        <%= form.text_field :title, id: :badge_title, class: 'form-control'  %>
       </p>
 
       <p>
         <%= form.label :rule %>
         <%= form.select :rule,
-          options_for_select(Badge::RULES, selected: @badge.rule),
+          options_for_select(BadgesService::RULES, selected: @badge.rule),
           { prompt: true }, { class: 'form-control' } %>
       </p>
 
@@ -30,6 +30,5 @@
       <%= form.submit class: 'btn btn-primary' %>
       </div>
     <% end %>
-    <%= link_to t('back'), admin_tests_path %>
   </div>
 </div>
