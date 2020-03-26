@@ -29,10 +29,14 @@ class User < ApplicationRecord
   end
 
   def full_name
-    first_name + ' ' + last_name
+    "#{first_name} #{last_name}"
   end
 
   def admin?
     self.is_a?(Admin)
+  end
+
+  def not_received_badges
+    Badge.where.not(id: badges)
   end
 end

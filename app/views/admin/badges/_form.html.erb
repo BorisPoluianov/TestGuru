@@ -18,7 +18,7 @@
       <p>
         <%= form.label :rule %>
         <%= form.select :rule,
-          options_for_select(BadgesService::RULES, selected: @badge.rule),
+          options_for_select(BadgesService.options, selected: @badge.rule),
           { prompt: true }, { class: 'form-control' } %>
       </p>
 

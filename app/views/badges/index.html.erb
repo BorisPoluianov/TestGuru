@@ -1,16 +1,18 @@
-<h2><%= t('.my_badges') %></h2>
-<table class="table">
-  <thead  class="thead-light">
-    <tr>
-      <th class="text-center"><%= t('.image') %></th>
-      <th><%= t('.title') %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @badges %>
-  </tbody>
-</table>
+<h2 class="mb-3">
+  <%= t('.my_badges') %>
+</h2>
+<div class="mb-4">
+  <%= render @badges %>
+</div>
+<h2 class="mb-3">
+  <%= t('.not_received_badges')%>
+</h2>
+<div>
+  <%= render @not_received_badges
+    t('.received_all_badges') if @not_received_badges.empty?%>
+</div>
 
+<br/>
 <div>
   <%= link_to t('back'), tests_path, class: 'link'%>
 </div>

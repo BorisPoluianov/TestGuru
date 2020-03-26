@@ -161,6 +161,8 @@ en:
       my_badges: 'My badges'
       image: 'Image'
       title: 'Title'
+      not_received_badges: 'Not not_received_badges'
+      received_all_badges: 'You have received all available badges'
     category_passed: 'Passed all tests with category'
     first_attempt: 'On first attempt passed test'
     level_passed: 'Passed all tests with level'
