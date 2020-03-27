@@ -26,22 +26,31 @@ class BadgesService
 
   def by_category?(category)
     if @test_progress.test.category.title == category
-      category_tests = Test.available_tests.by_category(category).distinct.pluck(:id)
-      category_tests == TestProgress.passed.where(user_id: @user.id,
-        test_id: category_tests).pluck(:test_id).sort
+      category_tests_ids = Test.available_tests.by_category(category).distinct.pluck(:id)
+      passed_category_tests_ids = TestProgress.passed.where(user_id: @user.id,
+        test_id: category_tests_ids).pluck(:test_id).sort
+      multiple?(category_tests_ids, passed_category_tests_ids)
     end
   end
 
-  def by_first_attempt?(title)
-    @user.tests.where(title: title).count == 1 if @test_progress.test.title == title
+  def by_first_attempt?(_title)
+    @user.tests.where(title: @test_progress.test.title).count == 1
   end
 
   def by_level?(level)
     level = level.to_i
     if @test_progress.test.level == level.to_i
-      level_tests = Test.available_tests.level(level).distinct.pluck(:id)
-      level_tests == TestProgress.passed.where( user_id: @user.id,
-        test_id: level_tests).pluck(:test_id).sort
+      level_tests_ids = Test.available_tests.level(level).distinct.pluck(:id)
+      passed_tests_ids = TestProgress.passed.where( user_id: @user.id,
+        test_id: level_tests_ids).pluck(:test_id).sort
+      multiple?(level_tests_ids, passed_tests_ids)
     end
+  end
+
+  def multiple?(tests_ids, passed_tests_ids)
+    multiple = tests_ids.map do |v|
+      passed_tests_ids.select.count { |i| i == v }
+    end
+    multiple.all?(multiple.min)
   end
 end
