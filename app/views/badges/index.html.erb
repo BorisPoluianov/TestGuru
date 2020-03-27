@@ -1,16 +1,24 @@
 <h2 class="mb-3">
   <%= t('.my_badges') %>
 </h2>
-<div class="mb-4">
-  <%= render @badges %>
-</div>
+
+<table class="table">
+  <tbody>
+    <%= render @badges %>
+    <%= t('.badges_empty') if @badges.empty? %>
+  </tbody>
+</table>
+
 <h2 class="mb-3">
   <%= t('.not_received_badges')%>
 </h2>
-<div>
-  <%= render @not_received_badges
-    t('.received_all_badges') if @not_received_badges.empty?%>
-</div>
+
+<table class="table">
+  <tbody>
+    <%= render @not_received_badges %>
+    <%= t('.received_all_badges') if @not_received_badges.empty? %>
+  </tbody>
+</table>
 
 <br/>
 <div>

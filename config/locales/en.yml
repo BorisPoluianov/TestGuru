@@ -163,6 +163,7 @@ en:
       title: 'Title'
       not_received_badges: 'Not not_received_badges'
       received_all_badges: 'You have received all available badges'
+      badges_empty: 'You haven’t received any badges yet'
     category_passed: 'Passed all tests with category'
     first_attempt: 'On first attempt passed test'
     level_passed: 'Passed all tests with level'

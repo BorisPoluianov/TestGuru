@@ -167,6 +167,7 @@ ru:
       title: 'Название'
       not_received_badges: 'Не полученные значки'
       received_all_badges: 'Вы получили все доступные значки'
+      badges_empty: 'У вас нет ни одного значка'
     category_passed: 'Пройдены все тесты категории'
     first_attempt: 'С первой попытки пройден тест'
     level_passed: 'Пройдены все тесты уровня'

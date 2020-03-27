@@ -26,24 +26,22 @@ class BadgesService
 
   def by_category?(category)
     if @test_progress.test.category.title == category
-      passed_count = TestProgress.passed.where(user_id: @user.id)
-                            .pluck('DISTINCT test_id')
-                            .count
-      passed_count.remainder(Test.by_category(category).count).zero?
+      category_tests = Test.available_tests.by_category(category).distinct.pluck(:id)
+      category_tests == TestProgress.passed.where(user_id: @user.id,
+        test_id: category_tests).pluck(:test_id).sort
     end
   end
 
   def by_first_attempt?(title)
-    @user.tests.where(title: title).count == 1 #if @test_progress.test.title == title
+    @user.tests.where(title: title).count == 1 if @test_progress.test.title == title
   end
 
   def by_level?(level)
     level = level.to_i
     if @test_progress.test.level == level.to_i
-      tests_count = Test.level(level).count
-      user_tests_count = TestProgress.passed.includes(:test)
-        .where( user_id: @user.id, tests: { level: level }).count
-      user_tests_count.remainder(tests_count).zero?
+      level_tests = Test.available_tests.level(level).distinct.pluck(:id)
+      level_tests == TestProgress.passed.where( user_id: @user.id,
+        test_id: level_tests).pluck(:test_id).sort
     end
   end
 end
