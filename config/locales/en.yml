@@ -19,6 +19,11 @@ en:
         remember_me: "Remember me"
         first_name: 'First name'
         last_name: 'Last_name'
+      badge:
+        image: Image
+        title: Title
+        rule: Rule
+        rule_parameter: 'Rule parameter'
     models:
       answer: Answer
       question: Question
@@ -37,6 +42,7 @@ en:
     nav:
       all_tests: All tests
       greetings: "Greetings, %{full_name}"
+      badges: 'Badges'
     questions:
       edit:
         header: "Editing question for the test: %{title}"
@@ -70,6 +76,20 @@ en:
         test_title: "Test %{title}"
       form_inline:
         submit: Ok
+    badges:
+      index:
+        all_badges: 'All badges'
+        image: 'Image'
+        title: 'Title'
+        rule_parameter: 'Rule parameter'
+        actions: 'Actions'
+        new_badge: 'New badge'
+      create:
+        saved: 'Badge was successfully saved'
+      update:
+        updated: 'Badge was successfully updated'
+      destroy:
+        destroyed: 'Badge was successfully destroyed'
   back: Back
   delete: Delete
   edit: Edit
@@ -88,6 +108,7 @@ en:
       admin_panel: "Admin panel"
       all_tests: "All tests"
       greetings: "Greetings, %{email}"
+      my_badges: "My badges"
   login: "Sign in"
   logout: "Log out"
   shared:
@@ -135,3 +156,14 @@ en:
         create: 'Sign up'
     select:
       prompt: 'Choose category'
+  badges:
+    index:
+      my_badges: 'My badges'
+      image: 'Image'
+      title: 'Title'
+      not_received_badges: 'Not not_received_badges'
+      received_all_badges: 'You have received all available badges'
+      badges_empty: 'You haven’t received any badges yet'
+    category_passed: 'Passed all tests with category'
+    first_attempt: 'On first attempt passed test'
+    level_passed: 'Passed all tests with level'

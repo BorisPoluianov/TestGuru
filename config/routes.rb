@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     path_names: { sign_in: :login, sign_out: :logout },
     controllers: { sessions: 'user/sessions' }
 
+  resources :badges, only: :index
   resources :feedbacks, only: [:new, :create]
 
   resources :tests, only: :index do
@@ -32,5 +33,6 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges
   end
 end

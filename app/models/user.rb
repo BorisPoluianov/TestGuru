@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :feedbacks
   has_many :gists
   has_many :test_progresses
+  has_many :badged_users
+  has_many :badges, through: :badged_users
   has_many :tests, through: :test_progresses
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
 
@@ -27,10 +29,14 @@ class User < ApplicationRecord
   end
 
   def full_name
-    first_name + ' ' + last_name
+    "#{first_name} #{last_name}"
   end
 
   def admin?
     self.is_a?(Admin)
+  end
+
+  def not_received_badges
+    Badge.where.not(id: badges)
   end
 end
