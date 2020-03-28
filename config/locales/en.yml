@@ -13,6 +13,7 @@ en:
         category_id: Category
         title: Name
         level: Level
+        duration: Test duration
       user:
         email: Email
         password: Password
@@ -72,6 +73,7 @@ en:
         level: Level
         new_question: "New question"
         question: Question
+        duration: Test duration in minutes
       test:
         test_title: "Test %{title}"
       form_inline:

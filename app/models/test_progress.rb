@@ -5,6 +5,7 @@ class TestProgress < ApplicationRecord
 
   before_save :before_save_set_question
   before_update :before_update_set_passed
+  before_update :before_update_check_remaining_time
 
   scope :passed, -> {
     where(passed: true)
@@ -25,12 +26,19 @@ class TestProgress < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.questions_passed += 1 if correct_answer?(answer_ids)
+    unless time_is_up?
+      self.questions_passed += 1 if correct_answer?(answer_ids)
+    end
     save!
   end
 
   def current_question_number
     test.questions.count - next_questions.count
+  end
+
+
+  def remaining_time
+    (expires_at - Time.now).to_i
   end
 
   private
@@ -46,6 +54,10 @@ class TestProgress < ApplicationRecord
 
   def before_update_set_passed
     self.passed = test_passed? if completed?
+  end
+
+  def before_update_check_remaining_time
+    self.current_question = nil if time_is_up?
   end
 
   def correct_answer?(answer_ids)
@@ -66,5 +78,13 @@ class TestProgress < ApplicationRecord
 
   def next_questions
     test.questions.order(:id).where('id > ?', current_question.id)
+  end
+
+  def expires_at
+    created_at + test.duration.minutes
+  end
+
+  def time_is_up?
+    expires_at < Time.now
   end
 end

@@ -13,6 +13,8 @@ ru:
         category_id: Категория
         title: Название
         level: Уровень
+        duration:
+          one: Время прохождения теста
       user:
         email: Email
         password: Пароль
@@ -74,6 +76,7 @@ ru:
         level: Уровень
         new_question: "Новый вопрос"
         question: Вопрос
+        duration: Время прохождения теста в минутах
       test:
         test_title: "Тест: %{title}"
       form_inline:

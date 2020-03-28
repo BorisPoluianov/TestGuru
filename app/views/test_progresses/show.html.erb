@@ -12,7 +12,6 @@
       q_number: @test_progress.current_question_number,
       q_count: @test_progress.test.questions.count) %>
   <% end %>
-
 </div>
 
 <h4><%= @test_progress.current_question.body %>?</h4>
@@ -21,6 +20,9 @@
   <%= link_to 'gits', gist_test_progress_path(@test_progress), method: :post, class: 'btn btn-info' %>
 </p>
 
+<div><%= t('.remaining_time') %>: <%=content_tag :span, '', 
+  class: 'timer', style: 'color:red', data: {remaining_time: @test_progress.remaining_time} %>
+</div>
 
 <%= form_with url: test_progress_path(@test_progress), method: :put, local: true do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_progress.current_question.answers, :id, :body, include_hidden: false do |b| %>

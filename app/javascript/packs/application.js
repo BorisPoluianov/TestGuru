@@ -3,17 +3,22 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 import "bootstrap"
 import "../stylesheets/application"
 import "../utilities/sorting"
 import "../utilities/password"
 import "../utilities/form_inline"
 import "../utilities/progress_bar"
+import "../utilities/timer"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
